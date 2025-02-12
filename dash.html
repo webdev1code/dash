@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Store Dashboard</title>
+    <link rel="stylesheet" href="dash.css">
+</head>
+<body>
+    <div class="container">
+        <header class="top-bar">
+            <span class="welcome">مرحبًا - akwad soft</span>
+            <div class="window-controls">
+                <button class="minimize-btn" onclick="minimizeWindow()">➖</button>
+                <button class="maximize-btn" onclick="maximizeWindow()">🔲</button>
+                <button class="close-btn" onclick="window.close();">❌</button>
+            </div>
+        </header>
+  
+
+   <!-- شريط العناوين الجديد -->
+   <nav class="title-bar">
+    <span>الاصناف</span>
+    <span>المخازن</span>
+    <span>الموردين</span>
+    <span>المشتريات</span>
+    <span>العملاء</span>
+    <span>المبيعات</span>
+    <span>البنوك</span>
+    <span>الخزائن</span>
+    <span>شؤون العاملين</span>
+    <span>الحسابات</span>
+    <span>أدوات</span>
+</nav>
+
+        <div class="sidebar">
+            <button>📋 تقرير مبيعات تفصيلي</button>
+            <button>💰 ميزان مراجعة</button>
+            <button>📦 تقرير مشتريات</button>
+            <button>📊 تقرير مبيعات إجمالي</button>
+            <button>💳 تقرير مصروفات</button>
+            <button>👨‍💼 تقرير مبيعات موظفين</button>
+            <button>🔑 كشف حساب عميل</button>
+            <button>📜 كشف حساب مورد</button>
+            <button>🔍 تقرير الجرد</button>
+            <button>⚙️ صلاحيات المستخدمين</button>
+        </div>
+        <main class="content">
+            <div class="logo">
+                <img src="image/logo.png" alt="Phone Store Logo">
+            </div>
+        </main>
+        <aside class="right-sidebar">
+            <div class="date-section">تاريخ اليوم</div>
+            <button class="close-day">إغلاق اليومية❌ </button>
+            <div class="dropdowns">
+                <label>الفرع:</label>
+                <select><option>الوادي فون</option></select>
+                <label>المخزن:</label>
+                <select><option>الوادي فون</option></select>
+                <label>الخزينة:</label>
+                <select><option>الوادي فون</option></select>
+            </div>
+            <div class="actions">
+                <button>📊 استعلام عن رصيد صنف</button>
+                <button>💵 مبيعات</button>
+                <button>🛒 مشتريات</button>
+                <button>💸 صرف نقدية</button>
+                <button>💰 استلام نقدية</button>
+                <button>📑 ملخص يومية</button>
+            </div>
+        </aside>
+        <footer class="footer">
+            <span>نسخة مرخصة - المبيعات</span>
+            <span>01224272991 - 01066177141</span>
+            <span>لدعم الفني: 0111188575</span>
+        </footer>
+        <script src="dash.js"></script>
+    </div>
+
+</body>
+</html>

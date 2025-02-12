@@ -1,0 +1,180 @@
+* {
+    margin: 0;  /* إزالة الهوامش الافتراضية */
+    padding: 0;  /* إزالة الحشوات الافتراضية */
+    box-sizing: border-box; /* التأكد من أن العرض يشمل الحواف والحدود */
+}
+/* إزالة أي تمرير غير مرغوب فيه ولكن السماح له بداخل المحتوى */
+html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  display: flex;
+    flex-direction: column;
+}
+.container {
+    display: grid;
+    grid-template-columns: 250px 1fr 250px; /* الجانبين والمحتوى */
+    grid-template-rows: auto 1fr auto;
+    width: 100%;
+    height: 100%;
+    grid-template-areas:
+        "header header header"
+        "title-bar title-bar title-bar"
+        "sidebar content right-sidebar"
+        "footer footer footer";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    width: 100vw; /* يجعل العرض 100% من الشاشة */
+    height: 100vh; /* يجعل الارتفاع 100% من الشاشة */
+}
+
+/* شريط العلوي */
+.top-bar {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 5px; /* تقليل الحواف الداخلية */
+    font-size: 16px; /* تقليل حجم النص */
+     height: 30px; /* تحديد ارتفاع ثابت أصغر */
+}
+/* شريط العناوين */
+.title-bar {
+    grid-area: title-bar;
+    background-color: #005f7f;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0; /* جعله رفيع */
+    font-size: 14px;
+}
+
+.title-bar span {
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+/* القائمة الجانبية اليمنى (كانت يسار) */
+.sidebar {
+    grid-area: right-sidebar; /* تغيير الاسم ليصبح في اليمين */    
+    background-color: #004b63;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 100vh; /* جعل الارتفاع يملأ الشاشة بالكامل */   
+}
+
+.sidebar button {
+    background-color: #00708c;
+    color: white;
+   
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.sidebar button:hover {
+    background-color: #005f7f;
+}
+
+/* ضبط المحتوى ليتناسب مع الحجم المتاح */
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    overflow: auto; /* بدل hidden حتى يظهر المحتوى عند الحاجة */
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* القائمة الجانبية اليسرى (كانت يمين) */
+.right-sidebar { 
+    grid-area: sidebar; /* تغيير الاسم ليصبح في اليسار */
+    background-color: #004b63; /* تعيين لون خلفية القائمة الجانبية */
+    color: white; /* جعل لون النصوص أبيض */
+    padding: 10px; /* إضافة حشوة داخلية لزيادة المسافة بين الحدود الداخلية والمحتوى */
+    display: flex;
+    flex-direction: column; /* جعل العناصر تتكدس عموديًا */
+    align-items: center; /* محاذاة العناصر للوسط أفقيًا */
+}
+
+/* تنسيق نص التاريخ */
+.date-section .date-text { 
+    font-size: 18px; /* تعيين حجم الخط */
+    color: white; /* جعل لون النص أبيض */
+    margin-bottom: 10px; /* إضافة مسافة أسفل التاريخ */
+}
+
+.window-controls {
+    display: flex;
+    gap: 15px; /* تقليل المسافة بين الأزرار */
+}
+
+.window-controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 10px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.window-controls button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.dropdowns {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.dropdowns label,
+.dropdowns select {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.actions button {
+    background-color: #00708c;
+    color: white;
+    
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+.actions button:hover {
+    background-color: #005f7f;
+}
+
+/* الفوتر */
+.footer {
+    grid-area: footer;
+    background-color: #005f7f;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
